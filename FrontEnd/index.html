@@ -11,14 +11,15 @@
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
+	<div id="edit-mode" style="display: none;">
+		<p>Mode édition</p>
+		<button id="publish">publier les changements</button>
+	</div>
 <header>
-	<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
+	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
-		<ul>
-			<li>projets</li>
-			<li>contact</li>
-			<li><a href="login.html">login</a></li>
-			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+		<ul id="nav-bar">
+			<li id="logo-insta"><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
 </header>
@@ -62,6 +63,7 @@
 		</ul>
 	</nav>
 </footer>
-<script src="js/works.js"></script>
+<script src="js/home.js"></script>
+<script src="js/navbar.js"></script>
 </body>
 </html>
