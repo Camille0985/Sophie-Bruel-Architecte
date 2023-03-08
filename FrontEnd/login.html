@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <title>Sophie Bluel - Architecte d'intérieur</title>
@@ -12,31 +12,36 @@
     </head>
 <body>
 <header>
-    <h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
+    <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
     <nav>
-        <ul>
-            <li>projets</li>
-            <li>contact</li>
-            <li>login</li>
-            <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
-        </ul>
+		<ul id="nav-bar">
+			<li id="logo-insta"><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+		</ul>
     </nav>
 </header>
-<div class="container">
-    <h1>Log in</h1>
-    <form>
-        <div class="infos">
-            <label>E-mail</label>
-            <input type="email" name="email">
-            <label>Mot de passe</label>
-            <input type="text" name="password">
+<h2 id="login-page-title">Log In</h2>
+<div class="login-container">
+    <form id="log-form">
+        <div class="login-infos"> 
+                <label>E-mail</label>
+                <input type="email" name="email" id="login-email" value="" required>
+                <label>Mot de passe</label>
+                <input type="text" name="password" id="login-password" value="" required>
         </div>
-        <div class="connect">
-            <input type="button" name="connect" value="Se connecter">
-            <a href="" class="forgot-password">Mot de passe oublié</a>
+        <div class="login-connect">
+            <input type="button" name="connect" value="Se connecter" id="login-btn-connect">
+            <p><a href="" class="forgot-password">Mot de passe oublié</a></p>
         </div>
     </form>
 </div>
+<footer>
+	<nav>
+		<ul>
+			<li>Mentions Légales</li>
+		</ul>
+	</nav>
+</footer>
 <script src="js/login.js"></script>
+<script src="js/navbar.js"></script>
 </body>
 </html>
