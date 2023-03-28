@@ -23,6 +23,7 @@ liContact.appendChild(aContact);
 ulist.appendChild(liContact);
 
 liLogin.appendChild(aLogin);
+aLogin.setAttribute("id", "log-link");
 ulist.appendChild(liLogin);
 
 ulist.appendChild(logoInsta);

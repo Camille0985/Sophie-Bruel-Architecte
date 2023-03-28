@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	position: relative;
 }
 ol, ul {
 	list-style: none;
@@ -48,11 +49,20 @@ table {
 }
 /** end reset css**/
 body {
+	max-width: 1440px;
+	margin:auto;
+	font-family: 'Work Sans' ;
+	font-size: 14px;
+}
+
+#body-less{
 	max-width: 1140px;
 	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
 }
+
+
 header {
 	display: flex;
 	justify-content: space-between;
@@ -194,9 +204,12 @@ body{
 }
 
 footer{
+	max-width: 1440px;
 	background-color: white;
 	height: 60px;
 	line-height: 60px;
+	
+	bottom: 0;
 }
 
 /* home page */
@@ -208,6 +221,21 @@ footer{
 a.active{
 	font-weight: bold;
 	color: black;
+}
+
+.display-flex{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+#edit-projects{
+	display: none;
+	margin-bottom: 1.7em;
+	font-family: 'Work Sans';
+	border: none;
+	background-color: inherit;
 }
 
 .filters{
@@ -243,7 +271,231 @@ a.active{
 	color: white;
 }
 
-/* log page */
+/* modal */
+
+#modal{
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.3);
+}
+
+#modal-container{
+	display: none;
+	width: 630px;
+	height: 731px;
+	background-color: white;
+	border-radius: 10px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#modal-content{
+	display: none;
+	width: 630px;
+	height: 90%;
+	background-color: white;
+	border-radius: 10px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#top-icon-modal{
+	display: flex;
+	justify-content: space-between;
+}
+
+#back-add-project{
+	display: flex;
+	justify-content: flex-start;
+	margin: 20px;
+}
+
+#close-modal{
+	display: flex;
+	justify-content: flex-end;
+	margin: 20px;
+}
+
+#modal h2{
+	font-size: 26px;
+	font-family: 'Work Sans';
+	font-weight: 400;
+	color: black;
+	text-align: center;
+}
+
+#modal-gallery{
+	display: grid;
+	grid-template-columns: 85.68px 85.68px 85.68px 85.68px 85.68px;
+	gap: 10px;
+	width: 550px;
+	justify-content: center;
+	margin: 0;
+	position: absolute;
+	left: 50%;
+	top: 41%;
+	transform: translate(-50%, -50%);
+}
+
+.modal-figure{
+	position: relative;
+	width: 85.68px;
+	height: 128.78px;
+}
+
+.modal-img{
+	height: 105.34px;
+	width: 100%;
+	position: relative;
+}
+
+.fa-trash-can{
+	padding: 4px;
+	margin: 6px;
+	border-style: none;
+	border-radius: 2px;
+	font-size: 9px;
+	color: white;
+	background-color: black;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+#hr-modal{
+	position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+	width: 100%;
+}
+
+#edit-btns-area{
+	position: absolute;
+	left: 50%;
+	top: 90%;
+	transform: translate(-50%, -50%);
+}
+
+#edit-btns-area button{
+	display: block;
+}
+
+#btn-add-picture{
+	font-family: 'Syne';
+	font-weight: 700;
+	font-size: 16px;
+	color: white;
+	background-color: #1D6154;
+	width: 179px;
+	height: 36px;
+	text-align: center;
+	border-radius: 60px;
+	border: 1px solid #1D6154 ;
+	margin-bottom: 20px;
+}
+
+#btn-delete-gallery{
+	background-color: inherit;
+	border: none;
+	color: red;
+	justify-content: center;
+}
+
+/* Choose new project to add */
+
+#modal-add-project{
+	display: none;
+	width: 630px;
+	height: 90%;
+	background-color: white;
+	border-radius: 10px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	justify-content: center;
+}
+
+#modal-add-project h2{
+	font-size: 26px;
+	font-family: 'Work Sans';
+	font-weight: 400;
+	color: black;
+}
+
+#div-add-file{
+	display: block;
+}
+
+#img-icon{
+	color: #B9C5CC;
+	width: 58px;
+	height: 46px;
+}
+
+#btn-add-project{
+	width: 173px;
+	height: 36px;
+	left: 633px;
+	top: 881px;
+	background: #CBD6DC;
+	border-radius: 50px;
+	border-style: none;
+	color: #306685;
+	font-family: 'Work Sans';
+}
+
+#input-add-file{
+	width: 173px;
+	height: 36px;
+	border-radius: 50px;
+	background-color: #CBD6DC;
+	margin-top: 50px;
+	visibility: hidden;
+}
+
+#container-project-info{
+	display: block;
+	margin: 50px 0 50px 0;
+	height: 60%;
+	width: 50%;
+	justify-content: center;
+}
+
+#container-project-info label{
+	text-align: left;
+}
+
+#div-title-element{
+	display: block;
+}
+
+.input-add-project{
+	border-style: none;
+	width: 420px;
+	height: 51px;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	display: block;
+	margin: 20px 0 20px 0;
+}
+
+#btn-valid-project{
+	width: 237px;
+	height: 36px;
+	background-color: #1D6154;
+	color: white;
+	border-radius: 60px;
+	border-style: none;
+}
+
+/* login */
 
 #login-page-title{
 	text-align: center;
@@ -268,7 +520,6 @@ a.active{
 
 .login-infos label{
 	margin: 2em 0 1em 0;
-	background-color: red;
 }
 
 .login-infos input{
@@ -301,7 +552,7 @@ a.active{
 
 #edit-mode{
 	display: flex;
-	width: 1440px;
+	max-width: 1440px;
 	height: 59px;
 	background-color: black;
 	color: white;

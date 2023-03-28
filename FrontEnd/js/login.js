@@ -1,15 +1,3 @@
-/*document.querySelector('form input[type="button"]').addEventListener("click", function(){
-    let valid = true;
-    for(let input of document.querySelectorAll("form input, form text")) {
-        valid = valid && input.reportValidity();
-        if(!valid) {
-            break;
-          }
-        }
-        if(valid) {
-          alert('Connexion');
-        }
-});*/
 let btnConnect = document.getElementById('login-btn-connect');
 btnConnect.addEventListener("click", connectUser);
 
@@ -30,8 +18,7 @@ btnConnect.addEventListener("click", connectUser);
       })
       .then(function(response){
         return response.json()
-      })
-    
+      })    
       .then(function(data) {
         console.log(data);
         if (typeof data.token !== 'undefined') {

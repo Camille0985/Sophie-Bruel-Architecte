@@ -4,25 +4,6 @@ let image;
 let figcaption;
 let figcaptionContent;
 
-/*
-function myFunction(categoryId) {
-    for (i = 1; i < tabSet.length; i++) {
-        if(i === categoryId || categoryId === 0) {
-            tabSet[i].forEach((value2, index2, setCategory2) => {
-                //show obj
-                                
-            })
-            
-        } else {
-            tabSet[i].forEach((value2, index2, setCategory2) => {
-            //hide obj
-
-            })
-        }
-    }
-}
-*/
-
 function sortCategories(categoryId) {
     let btns = document.querySelectorAll(".btn-filters")
     for(let i = 0; i < btns.length; i++) {
@@ -84,7 +65,6 @@ fetch('http://localhost:5678/api/works')
 
     });
 
-
     class Categories{
         constructor(dataCategories){
             dataCategories && Object.assign(this, dataCategories);
@@ -117,12 +97,26 @@ fetch('http://localhost:5678/api/works')
             button.onclick = function() {sortCategories(categories.id)};
             const buttonValue = document.createTextNode(categories.name);
             button.appendChild(buttonValue);  
-  }
+    }
 })
 
 window.addEventListener('load', function() {
     if (localStorage.getItem('token') !== '') {
         let editMode = document.getElementById('edit-mode');
         editMode.style.display = 'flex';
+        let editProjects = document.getElementById("edit-projects");
+        editProjects.style.display = 'flex';
+        let logLink = document.getElementById('log-link');
+        logLink.innerText = 'logout';
+        let btnFilters = document.getElementById('filters');
+        btnFilters.style.display = 'none';
+        logLink.onclick = function() {
+            localStorage.setItem('token', '');
+            window.location.href = "index.html";
+        }
+    }
+    else {
+        let logLink = document.getElementById('log-link');
+        logLink.innerText = 'login';
     }
 });
