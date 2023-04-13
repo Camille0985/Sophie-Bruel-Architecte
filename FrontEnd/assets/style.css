@@ -287,7 +287,7 @@ a.active{
 	height: 731px;
 	background-color: white;
 	border-radius: 10px;
-	position: absolute;
+	position: relative;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
@@ -299,10 +299,7 @@ a.active{
 	height: 90%;
 	background-color: white;
 	border-radius: 10px;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
+	position: relative;
 }
 
 #top-icon-modal{
@@ -337,9 +334,9 @@ a.active{
 	width: 550px;
 	justify-content: center;
 	margin: 0;
-	position: absolute;
+	position: relative;
 	left: 50%;
-	top: 41%;
+	top: 38%;
 	transform: translate(-50%, -50%);
 }
 
@@ -373,7 +370,7 @@ a.active{
     left: 50%;
     top: 80%;
     transform: translate(-50%, -50%);
-	width: 100%;
+	width: 70%;
 }
 
 #edit-btns-area{
@@ -403,9 +400,11 @@ a.active{
 
 #btn-delete-gallery{
 	background-color: inherit;
+	width: 179px;
+	height: auto;
 	border: none;
 	color: red;
-	justify-content: center;
+	text-align: center;
 }
 
 /* Choose new project to add */
@@ -416,11 +415,9 @@ a.active{
 	height: 90%;
 	background-color: white;
 	border-radius: 10px;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
+	align-items: center;
 	justify-content: center;
+	flex-direction: column;
 }
 
 #modal-add-project h2{
@@ -430,51 +427,64 @@ a.active{
 	color: black;
 }
 
+#div-img-preview{
+	display: none;
+	margin-top: 20px;
+}
+
 #div-add-file{
-	display: block;
+	text-align: center;
+}
+
+#div-img-icon{
+	text-align: center;
+	margin-top: 5em;
 }
 
 #img-icon{
+	font-size: 58px;
 	color: #B9C5CC;
 	width: 58px;
 	height: 46px;
 }
 
+#hr-add-project{
+	width: 70%;
+}
+
 #btn-add-project{
+	margin: 25px 0 10px 0;
 	width: 173px;
 	height: 36px;
-	left: 633px;
-	top: 881px;
 	background: #CBD6DC;
 	border-radius: 50px;
 	border-style: none;
 	color: #306685;
+	font-weight: bold;
 	font-family: 'Work Sans';
+	text-align: center;
 }
 
 #input-add-file{
 	width: 173px;
 	height: 36px;
 	border-radius: 50px;
-	background-color: #CBD6DC;
 	margin-top: 50px;
-	visibility: hidden;
+	display: none;
+}
+
+#size-required{
+	text-align: center;
 }
 
 #container-project-info{
-	display: block;
 	margin: 50px 0 50px 0;
 	height: 60%;
-	width: 50%;
 	justify-content: center;
 }
 
 #container-project-info label{
 	text-align: left;
-}
-
-#div-title-element{
-	display: block;
 }
 
 .input-add-project{
@@ -487,12 +497,16 @@ a.active{
 }
 
 #btn-valid-project{
-	width: 237px;
-	height: 36px;
+	width: 200px;
+	height: 50px;
 	background-color: #1D6154;
 	color: white;
 	border-radius: 60px;
 	border-style: none;
+}
+
+#btn-valid-project[disabled=disabled], #btn-valid-project:disabled {
+    background-color: #A7A7A7;
 }
 
 /* login */
@@ -512,6 +526,17 @@ a.active{
 #log-form{
 	width: 379px;
 	height: auto;
+}
+
+#error-id{
+	display: none;
+	width: 100%;
+	padding: 5px;
+	background-color: rgb(255, 227, 179);
+	color: red;
+	text-align: center;
+	margin-bottom: 30px;
+	font-size: 11px;
 }
 
 .login-infos {

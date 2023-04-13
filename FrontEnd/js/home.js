@@ -36,10 +36,13 @@ class WorksManager{
     }
 }
 
+function refreshListProjects() {
 
 fetch('http://localhost:5678/api/works')
     .then(data => data.json())
     .then(dataListWorks => {
+        const gallery = document.getElementById('gallery');
+        gallery.innerHTML = "";
         for(let dataWorks of dataListWorks){
             let works = new Works(dataWorks);
             
@@ -47,7 +50,7 @@ fetch('http://localhost:5678/api/works')
             figure.setAttribute("class", works.category.name);
             figure.setAttribute("id", `${works.id}`);
             figure.setAttribute("categoryId", `${works.categoryId}`);
-            document.getElementsByClassName('gallery')[0].append(figure);
+            gallery.append(figure);
             image = document.createElement('img');
             figure.appendChild(image);
             let img = image;
@@ -64,6 +67,8 @@ fetch('http://localhost:5678/api/works')
         };
 
     });
+}
+refreshListProjects();
 
     class Categories{
         constructor(dataCategories){

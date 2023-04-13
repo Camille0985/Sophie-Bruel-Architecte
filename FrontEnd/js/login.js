@@ -26,11 +26,18 @@ btnConnect.addEventListener("click", connectUser);
         localStorage.setItem('token', data.token);
         if (localStorage.getItem('token') !== '') {
           window.location.href = "index.html";
+        }
         } else {
-          alert('not ok');
-        }    
-      } else {
-        alert('identifiants incorrects')
-      }
+          let email = document.getElementById('login-email');
+          let password = document.getElementById('login-password');
+          if (email.value == "" || password.value == "" && email.value !== user[email.value] || password.value !== user[password.value]) {
+            let errorId = document.getElementById('error-id');
+            errorId.style.display = "block";
+            errorId.innerHTML="Erreur d'authentification, veuillez vérifier l'email ou le mot de passe";  
+                   email.focus(); 
+                   password.focus(); 
+                   return false;                 
+          }
+        }
       });
   };
